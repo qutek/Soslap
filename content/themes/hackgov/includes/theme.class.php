@@ -38,6 +38,8 @@ class Hackgov_Theme {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+		show_admin_bar(false);
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -74,13 +76,13 @@ class Hackgov_Theme {
 		 * Enable support for Post Formats.
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
+		// add_theme_support( 'post-formats', array(
+		// 	'aside',
+		// 	'image',
+		// 	'video',
+		// 	'quote',
+		// 	'link',
+		// ) );
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'hackgov_custom_background_args', array(

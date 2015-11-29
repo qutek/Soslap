@@ -122,6 +122,13 @@ final class HackGov {
 				wp_enqueue_script( 'comment-reply' );
 			}
 
+			// dari sidiq
+			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+			wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css' );
+			wp_enqueue_style( 'icomoon', get_template_directory_uri() . '/assets/css/icomoon.css' );
+			wp_enqueue_style( 'typography', get_template_directory_uri() . '/assets/css/typography.css' );
+			wp_enqueue_style( 'style-default', get_template_directory_uri() . '/assets/css/style.css' );
+			wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true );
 
 			wp_register_script( 'hackgov', get_template_directory_uri() . '/assets/js/hackgov.js', array('jquery'), '', true );
 
@@ -142,8 +149,8 @@ final class HackGov {
 	private function define_constants() {
 
 		$this->define( 'HACKGOV_PLUGIN_FILE', __FILE__ );
-		// $this->define( 'CUZTOM_URL', $this->plugin_url() . '/includes/cuztom/' );
-		// $this->define( 'CUZTOM_DIR', $this->plugin_path() . '/includes/cuztom/' );
+		$this->define( 'CUZTOM_URL', $this->theme_url() . '/includes/cuztom/' );
+		$this->define( 'CUZTOM_DIR', $this->theme_path() . '/includes/cuztom/' );
 	}
 
 	/**
@@ -181,10 +188,15 @@ final class HackGov {
 	public function includes() {
 		// all public includes
 		include_once('includes/theme.class.php');
+		include_once('includes/post-types.class.php');
+		include_once('includes/votes.class.php');
+		include_once('includes/share-count.class.php');
+		include_once('includes/hackgov.functions.php');
+
 		include_once( 'includes/frontend/upload-image.class.php' );
 
 		if ( $this->is_request( 'admin' ) ) {
-			// include_once( 'includes/admin/admin.class.php' );
+			include_once( 'includes/admin/admin.class.php' );
 		}
 
 		if ( $this->is_request( 'ajax' ) ) {

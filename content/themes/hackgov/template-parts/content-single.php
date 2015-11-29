@@ -27,6 +27,9 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	<div class="votes-container">
+		<?php get_votes($post->ID); ?>
+	</div>
 
 	<footer class="entry-footer">
 		<?php hackgov_entry_footer(); ?>

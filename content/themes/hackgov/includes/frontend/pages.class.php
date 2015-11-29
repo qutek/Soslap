@@ -35,10 +35,10 @@ class Hackgov_Pages {
 			wp_enqueue_script( 'map' );
 			wp_enqueue_script( 'location', get_template_directory_uri() . '/assets/js/location.js', array('jquery', 'map'), '', true );
 			wp_localize_script( 'location', 'location_obj', 
-			array( 
-				'img_url' => get_template_directory_uri() . '/assets/images/',
-			) 
-		);
+				array( 
+					'img_url' => get_template_directory_uri() . '/assets/images/',
+				) 
+			);
 		}
 	}
 
@@ -137,6 +137,14 @@ class Hackgov_Pages {
 			'submit' => array(
 				'title' => 'Submit',
 		        'template' =>  get_template_directory() . '/submit.php',
+			),
+			'infrastruktur' => array(
+				'title' => 'Infrastruktur',
+		        'template' =>  get_template_directory() . '/infrastruktur.php',
+			),
+			'lingkungan' => array(
+				'title' => 'Lingkungan',
+		        'template' =>  get_template_directory() . '/lingkungan.php',
 			),
 		);
 

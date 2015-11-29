@@ -204,10 +204,10 @@
 		});
 
 		function initialize() {
-			var $latitude = document.getElementById('latitude');
-			var $longitude = document.getElementById('longitude');
-			var latitude = -7.72711716283;
-			var longitude = 110.40847454603272;
+			var $latitude = $('#latitude');
+			var $longitude = $('#longitude');
+			var latitude = $latitude.val();
+			var longitude = $longitude.val();
 			var zoom = 16;
 
 			$.get( 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude, function( data ) {
